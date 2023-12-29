@@ -88,11 +88,13 @@ class LogoutUserView(GenericAPIView):
     permission_classes=[IsAuthenticated]
     
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response({'message': 'Logout successfully'},status=status.HTTP_204_NO_CONTENT)
-        
+        try:
+            serializer = self.serializer_class(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response({'message': 'Logout successfully'},status=status.HTTP_204_NO_CONTENT)
+        except:
+            return Response({'message': 'User is already logged out'}, status=status.HTTP_200_OK)
     
 
 
