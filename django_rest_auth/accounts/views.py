@@ -97,12 +97,12 @@ class LogoutUserView(GenericAPIView):
 
 
 
-class TestAuthenticationView(GenericAPIView):
-    permission_classes=[IsAuthenticated]
+# class TestAuthenticationView(GenericAPIView):
+#     permission_classes=[IsAuthenticated]
     
-    def get(self,request):
-        data={
-            'msg':'its works'
-        }
-        return Response(data,status=status.HTTP_200_OK)
+#     def get(self,request):
+#         data={
+#             'msg':'its works'
+#         }
+#         return Response(data,status=status.HTTP_200_OK)
     
