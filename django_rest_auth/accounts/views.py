@@ -6,7 +6,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from . utils import send_code_to_user
 from . models import OneTimePassword
-from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 from rest_framework.exceptions import AuthenticationFailed
 
@@ -24,7 +23,7 @@ class RegisterUserView(GenericAPIView):
             user=serializer.data
             send_code_to_user(user['email'])
             # send email function user['email]
-            print(user)
+            # print(user)
             return Response({
                 'data':user,
                 'message':f'hi {user["first_name"]} thanks for signing up, a code is send to your mail id',
