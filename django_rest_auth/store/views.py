@@ -7,14 +7,6 @@ from . pagination import CustomPageNumberPagination
 from django.core.cache import cache
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
-# Create your views here.
-
-# class Booklist(generics.ListCreateAPIView):
-#     permission_classes=[IsAuthenticated]
-#     pagination_class=CustomPageNumberPagination
-    
-#     queryset = Book.objects.all()
-#     serializer_class=BookSerializer
 
 
 @receiver(post_save, sender=Book)
