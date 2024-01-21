@@ -35,6 +35,7 @@ class Booklist(generics.ListCreateAPIView):
     
     
 class BookDetail(generics.RetrieveUpdateDestroyAPIView):
+    '''Book updation and deletion functionality'''
     permission_classes=[IsAuthenticated]
     
     queryset = Book
