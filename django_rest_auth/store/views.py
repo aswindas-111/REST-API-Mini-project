@@ -16,6 +16,7 @@ def invalidate_book_cache(sender, instance, **kwargs):
     cache_key = 'book_queryset'
     cache.delete(cache_key)
 class Booklist(generics.ListCreateAPIView):
+    '''Book list,create view function'''
     permission_classes = [IsAuthenticated]
     pagination_class = CustomPageNumberPagination
 
